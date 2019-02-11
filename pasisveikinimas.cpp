@@ -8,21 +8,31 @@ using namespace std;
 int main()
 {
     string name;
-    int fulllenght;
+    int x, fulllenght;
     cout << "Koks jusu vardas" << endl;
     cin >> name;
-    fulllenght = 14 + name.size();
+    cout << "Iveskite remelio dydi (nuo 1 iki 10)" << endl;
+    cin >> x;
+    fulllenght = 10 + name.size() + 2*x;
+    if(x > 10 && x < 0)
+    {
+        return 0;
+    }
     for(int i = 0; i != fulllenght; i++)
     {
         printf("%c", '*');
     }
     printf("\n");
-
-    printf("%*c%c\n", -(fulllenght-1), '*', '*');
-    printf("%*c%s%s%c%*c\n", -2, '*',"Sveikas, ", name.c_str(), '!', 2, '*');
-    printf("%*c%c\n", -(fulllenght-1), '*', '*');
-
-    for(int i = 0; i != fulllenght; i++)
+    for(int i = 0; i != x; i++)
+    {
+        printf("%*c%c\n", -(fulllenght-1), '*', '*');
+    }
+    printf("%*c%s%s%c%*c\n", -(x+1), '*',"Sveikas, ", name.c_str(), '!', x-1, '*');
+    for(int i = 0; i != x; i++)
+    {
+        printf("%*c%c\n", -(fulllenght-1), '*', '*');
+    }
+        for(int i = 0; i != fulllenght; i++)
     {
         printf("%c", '*');
     }
