@@ -11,7 +11,7 @@ int main()
     int fulllenght;
     cout << "Koks jusu vardas" << endl;
     cin >> name;
-    fulllenght = 10 + name.size() + 4;
+    fulllenght = 14 + name.size();
     for(int i = 0; i != fulllenght; i++)
     {
         printf("%c", '*');
